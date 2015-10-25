@@ -1,9 +1,11 @@
 import os
 from flask import Flask
 from blockchain.wallet import Wallet
+from flask.ext.cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 
 reader_wallet_id = 'c4e7c925-8a48-4a0f-bf0a-88bae5def1cb'
 reader_wallet_password = 'Loeras2662#s2n'
