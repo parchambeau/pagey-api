@@ -27,8 +27,15 @@ def send_btc_to_author():
     # Return the balance of reader's wallet
     balance = wallet.get_balance()
 
+    print 'Current total balance of readers wallet in Satoshi is  ' + str(balance)
+
+    # Convert from Satoshi's to bits
+    converted_balance = convert_satoshi_to_bits(balance)
+
+    print 'Current total balance of readers wallet in Bits is  ' + str(converted_balance)
+
     # return current wallet balance (includes unconfirmed) for front end
-    return balance
+    return str(converted_balance)
 
 
 @app.route('/balance')
@@ -41,10 +48,20 @@ def check_balance():
     # Pull back the balance for readers wallet
     balance = wallet.get_balance()
 
-    print 'Current total balance of readers wallet is ' + str(balance)
+    print 'Current total balance of readers wallet in Satoshi is  ' + str(balance)
+
+    converted_balance = convert_satoshi_to_bits(balance)
+
+    print 'Current total balance of readers wallet in Bits is  ' + str(converted_balance)
 
     # Return current reader wallet balance for front end
-    return str(balance)
+    return str(converted_balance)
+
+def convert_satoshi_to_bits(value):
+    # Divide Satoshi by 100 to get value in bits
+    balance = value/100
+
+    return balance
 
 if __name__ == "__main__":
     app.run(debug=True)
