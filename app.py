@@ -5,6 +5,7 @@ from flask.ext.cors import CORS
 
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 CORS(app)
 
 reader_wallet_id = 'c4e7c925-8a48-4a0f-bf0a-88bae5def1cb'
@@ -15,7 +16,7 @@ author_receive_address = '1JGcSP5qu5BZG7gtt8rEaob9nxBxWaJzAz'
 
 @app.route('/send')
 def send_btc_to_author():
-    print 'Attempting to send 2000 bits from reader to author for turning page'
+    print 'Attempting to send 10000 bits from reader to author for turning page'
 
     # Set Wallet object to readers wallet
     wallet = Wallet(reader_wallet_id, reader_wallet_password)
@@ -25,7 +26,7 @@ def send_btc_to_author():
 
     # Adds 10,000 for some unknown reason in the error message when you try to send again with an unconfirmed transactions
 
-    print 'Sent 2000 bits from reader to author for turning page'
+    print 'Sent 10000 bits from reader to author for turning page'
     print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
 
     # Return the balance of reader's wallet
