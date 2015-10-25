@@ -6,7 +6,7 @@ from blockchain.wallet import Wallet
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
+def send_btc_to_author():
     print 'Sending 2000 bits from reader to author for turning page'
 
     wallet_id = 'c4e7c925-8a48-4a0f-bf0a-88bae5def1cb'
