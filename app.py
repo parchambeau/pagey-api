@@ -25,5 +25,12 @@ def send_btc_to_author():
 
     return
 
+@app.route('/balance')
+def check_balance():
+    print 'Checking balance of wallet...'
+
+    return
+
+
 if __name__ == "__main__":
     app.run(debug=True)
