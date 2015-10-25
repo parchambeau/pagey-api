@@ -25,10 +25,13 @@ def send_btc_to_author():
         print 'Sent 2000 bits from reader to author for turning page'
         print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
 
+        return True
+
     else:
         print 'Something weird happened, payment object is null / none'
+        return None
 
-    return
+
 
 @app.route('/balance')
 def check_balance():
@@ -43,10 +46,12 @@ def check_balance():
     if balance != None:
         print 'Current total balance of readers wallet is ' + str(balance)
 
+        return balance
+
     else:
         print 'Balance not being properly returned...'
 
-    return balance
+        return None
 
 
 if __name__ == "__main__":
