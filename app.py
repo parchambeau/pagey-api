@@ -37,16 +37,9 @@ def check_balance():
     # Pull back the balance for readers wallet
     balance = wallet.get_balance()
 
-    if balance != None:
-        print 'Current total balance of readers wallet is ' + str(balance)
+    print 'Current total balance of readers wallet is ' + str(balance)
 
-        return balance
-
-    else:
-        print 'Balance not being properly returned...'
-
-        return None
-
+    return balance
 
 if __name__ == "__main__":
     app.run(debug=True)
