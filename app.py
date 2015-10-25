@@ -21,16 +21,10 @@ def send_btc_to_author():
     # Send from wallet to new address (Receiving address (AUTHOR), Amount in satoshi, from address (READER))
     payment = wallet.send(author_receive_address, 2000, from_address=reader_send_from_address)
 
-    if payment != None:
-        print 'Sent 2000 bits from reader to author for turning page'
-        print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
+    print 'Sent 2000 bits from reader to author for turning page'
+    print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
 
-        return True
-
-    else:
-        print 'Something weird happened, payment object is null / none'
-        return None
-
+    return True
 
 
 @app.route('/balance')
