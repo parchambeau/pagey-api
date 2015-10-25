@@ -8,9 +8,9 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 CORS(app)
 
-reader_wallet_id = 'c4e7c925-8a48-4a0f-bf0a-88bae5def1cb'
+reader_wallet_id = 'f0ec6849-86c4-4c76-9470-d77acead7aef'
 reader_wallet_password = 'Loeras2662#s2n'
-reader_send_from_address = '1HKGvNjrMuZ71jkHAFA6e77iPxWM1pranx'
+reader_send_from_address = '1AsvJjuTANsCRZUu5r86DkTa8dUpwG47MA'
 
 author_receive_address = '1JGcSP5qu5BZG7gtt8rEaob9nxBxWaJzAz'
 
