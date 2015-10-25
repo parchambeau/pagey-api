@@ -15,7 +15,7 @@ author_receive_address = '1JGcSP5qu5BZG7gtt8rEaob9nxBxWaJzAz'
 def send_btc_to_author():
     print 'Attempting to send 2000 bits from reader to author for turning page'
 
-    # Set Wallet ojbect to send from
+    # Set Wallet object to readers wallet
     wallet = Wallet(reader_wallet_id, reader_wallet_password)
 
     # Send from wallet to new address (Receiving address (AUTHOR), Amount in satoshi, from address (READER))
@@ -24,7 +24,11 @@ def send_btc_to_author():
     print 'Sent 2000 bits from reader to author for turning page'
     print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
 
-    return True
+    # Return the balance of reader's wallet
+    balance = wallet.get_balance()
+
+    # return current wallet balance (includes unconfirmed) for front end
+    return balance
 
 
 @app.route('/balance')
@@ -35,11 +39,12 @@ def check_balance():
     wallet = Wallet(reader_wallet_id, reader_wallet_password)
 
     # Pull back the balance for readers wallet
-    #balance = wallet.get_balance()
+    balance = wallet.get_balance()
 
-    #print 'Current total balance of readers wallet is ' + str(balance)
+    print 'Current total balance of readers wallet is ' + str(balance)
 
-    #return balance
+    # Return current reader wallet balance for front end
+    return str(balance)
 
 if __name__ == "__main__":
     app.run(debug=True)
