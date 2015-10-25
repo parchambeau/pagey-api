@@ -35,11 +35,11 @@ def check_balance():
     wallet = Wallet(reader_wallet_id, reader_wallet_password)
 
     # Pull back the balance for readers wallet
-    balance = wallet.get_balance()
+    #balance = wallet.get_balance()
 
-    print 'Current total balance of readers wallet is ' + str(balance)
+    #print 'Current total balance of readers wallet is ' + str(balance)
 
-    return balance
+    #return balance
 
 if __name__ == "__main__":
     app.run(debug=True)
