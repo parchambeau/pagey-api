@@ -18,3 +18,6 @@ def hello():
     print payment.tx_hash
 
     return
+
+if __name__ == "__main__":
+    app.run(debug=True)
