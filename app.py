@@ -19,7 +19,9 @@ def send_btc_to_author():
     wallet = Wallet(reader_wallet_id, reader_wallet_password)
 
     # Send from wallet to new address (Receiving address (AUTHOR), Amount in satoshi, from address (READER))
-    payment = wallet.send(author_receive_address, 2000, from_address=reader_send_from_address)
+    payment = wallet.send(author_receive_address, 10000, from_address=reader_send_from_address)
+
+    # Adds 10,000 for some unknown reason in the error message when you try to send again with an unconfirmed transactions
 
     print 'Sent 2000 bits from reader to author for turning page'
     print 'Transaction Hash to search blockchain.info to verify transactions: ' + str(payment.tx_hash)
