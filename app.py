@@ -11,7 +11,7 @@ reader_send_from_address = '1HKGvNjrMuZ71jkHAFA6e77iPxWM1pranx'
 
 author_receive_address = '1JGcSP5qu5BZG7gtt8rEaob9nxBxWaJzAz'
 
-@app.route('/')
+@app.route('/send')
 def send_btc_to_author():
     print 'Attempting to send 2000 bits from reader to author for turning page'
 
